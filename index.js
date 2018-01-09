@@ -119,22 +119,26 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+   document.addEventListener('keydown', function(e) {
+     if (e.which === LEFT_ARROW) {
+       moveDodgerLeft()
+     }
+   });
+   
+   document.addEventListener('keydown', function(e) {
+     if (e.which === RIGHT_ARROW) {
+       moveDodgerRight()
+     }
+   });
 }
 
 function moveDodgerLeft() {
   var leftNumbers = dodger.style.left.replace('px', '')
   var left = parseInt(leftNumbers, 10)
-
   if (left > 0) {
     dodger.style.left = `${left - 1}px`
   }
 }
-
-document.addEventListener('keydown', function(e) {
-  if (e.which === 37) {
-    moveDodgerLeft()
-  }
-})
 
 function moveDodgerRight() {
   var leftNumbers = dodger.style.left.replace('px', '')
@@ -145,11 +149,7 @@ if (left < 360) {
   }
 }
 
-document.addEventListener('keydown', function(e) {
-  if (e.which === 39) {
-    moveDodgerRight()
-  }
-})
+
 
 /**
  * @param {string} p The position property
