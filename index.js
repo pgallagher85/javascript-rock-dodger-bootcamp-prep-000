@@ -124,7 +124,7 @@ function moveDodger(e) {
        moveDodgerLeft()
      }
    });
-   
+
    document.addEventListener('keydown', function(e) {
      if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
